@@ -16,6 +16,6 @@ void loop() {
 
   lectura = analogRead(A0);
   volt = lectura/1023 * 5.0;
-  Serial.println(volt);
-
+  Serial.print(volt);
+  delay(250);
 }
