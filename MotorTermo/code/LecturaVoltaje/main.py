@@ -3,9 +3,16 @@ import matplotlib as plt
 import numpy
 from drawnow import *
 
+plt.ion()  #Activate Interactive Plot on matplotlib
 
-arduinoData = serial.Serial('/dev/ttyACM0',9600)
+
+#arduinoData = serial.Serial('/dev/ttyACM0',9600)   #Linux
+arduinoData = serial.Serial('COM3' ,9600)   #Windows
 listaVoltaje = []
+
+def graficar():
+    plt.plot(listaVoltaje)
+
 
 def main():
 
@@ -13,9 +20,13 @@ def main():
         pass
 
     arduinoString = arduinoData.readline()
-    print(arduinoString)
+    #print(arduinoString)
     voltaje = float(arduinoString)
+    print(voltaje)
     listaVoltaje.append(voltaje)
+
+    drawnow(graficar)
+
 
     main()
 
