@@ -6,8 +6,8 @@ from drawnow import *
 plt.ion()  #Activate Interactive Plot on matplotlib
 
 
-#arduinoData = serial.Serial('/dev/ttyACM0',9600)   #Linux
-arduinoData = serial.Serial('COM3' ,9600)   #Windows
+arduinoData = serial.Serial('/dev/ttyACM0',9600)   #Linux
+#arduinoData = serial.Serial('COM3' ,9600)   #Windows
 listaVoltaje = []
 
 def graficar():
